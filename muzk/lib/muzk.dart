@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library muzk;
 
-export 'src/muzk_base.dart';
+export 'src/lib.dart';
 
 // TODO: Export any libraries intended for clients of this package.

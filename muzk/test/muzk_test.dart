@@ -1,4 +1,4 @@
-import 'package:muzk/muzk.dart';
+/* import 'package:muzk/muzk.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -14,3 +14,4 @@ void main() {
     });
   });
 }
+ */

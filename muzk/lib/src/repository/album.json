@@ -1,0 +1,28 @@
+{
+    "album": [
+        {
+            "id_deezer": 21,
+            "artist_id_deezer": 1,
+            "year": 1968,
+            "nome": "The White Album"
+        },
+        {
+            "id_deezer": 211,
+            "artist_id_deezer": 11,
+            "year": 1979,
+            "nome": "Sandina"
+        },
+        {
+            "id_deezer": 2111,
+            "artist_id_deezer": 111,
+            "year": 1969,
+            "nome": "Let It Bleed"
+        },
+        {
+            "id_deezer": 3111,
+            "artist_id_deezer": 111,
+            "year": 1974,
+            "nome": "Satisfaction"
+        }
+    ]
+}   
