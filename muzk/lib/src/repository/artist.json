@@ -2,15 +2,15 @@
     "artist": [
         {
             "id_deezer": 1,
-            "nome": "The Beatles"
+            "name": "The Beatles"
         },
         {
             "id_deezer": 11,
-            "nome": "The Clash"
+            "name": "The Clash"
         },
         {
             "id_deezer": 111,
-            "nome": "The Rolling Stones"
+            "name": "The Rolling Stones"
         }
     ]
 }   

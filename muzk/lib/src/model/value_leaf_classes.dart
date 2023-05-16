@@ -1,3 +1,40 @@
+import 'package:sid_d_d/sid_d_d.dart';
+import 'validator_classes.dart';
+
+// #############################
+// #  Ver: 3.0 - last: 30/01/23
+// #  Nullsafety
+// #  Value Object Class for UPC
+// #############################
+
+class IdDeezer extends ValueLeaf<int> {
+  //
+  // ===========================
+  IdDeezer({required super.value, required super.what})
+      : super(failures: ValidatorIdDeezer().failures(value: value));
+}
+
+class Year extends ValueLeaf<int> {
+  //
+  // ===========================
+  Year({required super.value, required super.what})
+      : super(failures: ValidatorYear().failures(value: value));
+}
+
+class ArtistName extends ValueLeaf<String> {
+  //
+  // ===========================
+  ArtistName({required super.value, required super.what})
+      : super(failures: ValidatorName().failures(value: value));
+}
+
+class Title extends ValueLeaf<String> {
+  //
+  // ===========================
+  Title({required super.value, required super.what})
+      : super(failures: ValidatorTitle().failures(value: value));
+}
+
 /* import 'package:uuid/uuid.dart';
 //
 import '../model/value_leaf.dart';
@@ -21,24 +58,7 @@ class UniqueId extends ValueLeaf<String> {
         );
 }
 
-// #############################
-// #  Ver: 3.0 - last: 30/01/23
-// #  Nullsafety
-// #  Value Object Class for UPC
-// #############################
-class Upc extends ValueLeaf<int> {
-  //
-  // ===========================
-  static List<Failure> validators(int value) {
-    //
-    final min = ValidatorMinValue(min: 1);
-    //
-    var list = <Failure>[];
-    //
-    list.addAll(min.failures(value: value));
-    //
-    return list;
-  }
+
 
   //
   // ===========================

@@ -1,6 +1,41 @@
+import 'package:muzk/src/model/value_leaf_classes.dart';
 import 'package:sid_d_d/sid_d_d.dart';
 
-// #############################
+class Artist extends ValueTree {
+  //
+  // ===========================
+  Artist._({
+    required super.values,
+    required super.what,
+  });
+
+  //
+  // ===========================
+  factory Artist.create({
+    required int id,
+    required String name,
+  }) =>
+      Artist._(
+        what: 'artist',
+        values: [
+          IdDeezer(
+            what: 'id_deezer',
+            value: id,
+          ),
+          ArtistName(
+            what: 'name',
+            value: name,
+          ),
+        ],
+      );
+
+  String get id => value.first.value;
+  String get name => value.last.value;
+}
+
+
+
+/* // #############################
 // #  Ver: 3.0 - last: 30/01/23
 // #  Nullsafety
 // #  Composite Pattern
@@ -128,4 +163,4 @@ class Person extends ValueTree {
 //-< Designed by Sedinir Consentini >-
 //  -< Rio de Janeiro  @  MMXXIII >-  
 //--> May the source be with you! <---
-//13
+//13 */
