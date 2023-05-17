@@ -77,6 +77,28 @@ class ValidatorName implements Validator<String> {
     return fList;
   }
 }
+
+// #############################
+// #  Ver: 3.0 - last: 16/05/23
+// #  Nullsafety
+// #  Class to check if is valid
+// #  a dynamic value
+// #  with a costum FUNCTION
+// #############################
+class ValidatorArtists implements Validator<Iterable<int>> {
+  //
+  @override // FOR ValidatorChecker
+  Iterable<Failure> failures({required Iterable<int> value}) {
+    var fList = <Failure>[];
+    if (value.isEmpty) {
+      fList.add(Failure('An Album must have at least 1 Artist'));
+    }
+    for (var artist in value) {
+      fList.addAll(ValidatorIdDeezer().failures(value: artist));
+    }
+    return fList;
+  }
+}
 //
 //          ┈┈┈╭━━╮┈┈┈┈┈┈
 //          ┈┈╭╯┊◣╰━━━━╮┈┈

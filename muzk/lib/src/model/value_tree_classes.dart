@@ -33,6 +33,67 @@ class Artist extends ValueTree {
   String get name => value.last.value;
 }
 
+class Album extends ValueTree {
+  //
+  // ===========================
+  Album._({
+    required super.values,
+    required super.what,
+  });
+
+  //
+  // ===========================
+  factory Album.create({
+    required int id,
+    required String title,
+    required Iterable<int> artists,
+  }) =>
+      Album._(
+        what: 'album',
+        values: [
+          IdDeezer(
+            what: 'id_deezer',
+            value: id,
+          ),
+          ArtistName(
+            what: 'title',
+            value: title,
+          ),
+          Artists.create(
+            artists: artists,
+          ),
+        ],
+      );
+
+  String get id => value.first.value;
+  String get title => value.elementAt(1).value;
+  Iterable<int> get artists => value.last.value;
+}
+
+class Artists extends ValueTree {
+  //
+  // ===========================
+  Artists._({
+    required super.values,
+    required super.what,
+  });
+  //
+  // ===========================
+  factory Artists.create({
+    required Iterable<int> artists,
+  }) {
+    final r = <IdDeezer>[];
+    for (var id in artists) {
+      r.add(IdDeezer(
+        what: 'id_deezer',
+        value: id,
+      ));
+    }
+    return Artists._(values: r, what: 'artists');
+  }
+  //String get artists => value;
+}
+
 
 
 /* // #############################
