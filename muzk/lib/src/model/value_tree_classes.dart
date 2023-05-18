@@ -29,6 +29,23 @@ class Artist extends ValueTree {
         ],
       );
 
+  //
+  // ===========================
+  static Iterable<Artist> createMany({
+    required Iterable<dynamic> artistList,
+  }) {
+    final r = <Artist>[];
+    for (var map in artistList) {
+      if (map.containsKey('id_deezer') && map.containsKey('name')) {
+        r.add(Artist.create(
+          id: map['id_deezer'],
+          name: map['name'],
+        ));
+      }
+    }
+    return r;
+  }
+
   String get id => value.first.value;
   String get name => value.last.value;
 }
@@ -45,8 +62,9 @@ class Album extends ValueTree {
   // ===========================
   factory Album.create({
     required int id,
-    required String title,
     required Iterable<int> artists,
+    required int year,
+    required String title,
   }) =>
       Album._(
         what: 'album',
@@ -55,19 +73,52 @@ class Album extends ValueTree {
             what: 'id_deezer',
             value: id,
           ),
+          Artists.create(
+            artists: artists,
+          ),
+          Year(
+            value: year,
+            what: 'year',
+          ),
           ArtistName(
             what: 'title',
             value: title,
           ),
-          Artists.create(
-            artists: artists,
-          ),
         ],
       );
 
-  String get id => value.first.value;
-  String get title => value.elementAt(1).value;
-  Iterable<int> get artists => value.last.value;
+  //
+  // ===========================
+  static Iterable<Album> createMany({
+    required Iterable<dynamic> albumList,
+  }) {
+    final r = <Album>[];
+    //print(albumList);
+    for (var map in albumList) {
+      if (map.containsKey('id_deezer') &&
+          map.containsKey('title') &&
+          map.containsKey('artists') &&
+          map.containsKey('year')) {
+        final artists = <int>[];
+        for (var i in map['artists']) {
+          artists.add(i);
+        }
+        //artists.addAll(as Iterable<int>);
+        r.add(Album.create(
+          id: map['id_deezer'],
+          artists: artists,
+          year: map['year'],
+          title: map['title'],
+        ));
+      }
+    }
+    return r;
+  }
+
+  int get id => value.first.value;
+  Iterable<IdDeezer> get artists => value.elementAt(1).value;
+  int get year => value.elementAt(2).value;
+  String get title => value.last.value;
 }
 
 class Artists extends ValueTree {
@@ -91,6 +142,7 @@ class Artists extends ValueTree {
     }
     return Artists._(values: r, what: 'artists');
   }
+
   //String get artists => value;
 }
 

@@ -2,17 +2,28 @@ import 'package:muzk/muzk.dart';
 import 'package:muzk/src/model/value_tree_classes.dart';
 
 void main() async {
-  final artist_maps = await Repo.load(what: What.artist);
-  print(artist_maps);
-  final artists = createArtists(artist_maps);
-  print(artists);
+/*   final artists = await Repo.load(what: What.artist) as Iterable<Artist>;
 
   for (var artist in artists) {
     print(artist.name);
+  } */
+
+  final albums = await Repo.load(what: What.album) as Iterable<Album>;
+  //print(albums);
+  for (var album in albums) {
+    print(album.title);
+    for (var artist in album.artists) {
+      print(artist.value);
+    }
   }
+
+/*   final albumList = await Repo.load(what: What.album);
+  //print(albumMap);
+  final albums = Album.createMany(albumList: albumList);
+  print(albums); */
 }
 
-List<Artist> createArtists(Iterable<dynamic> maps) {
+/* List<Artist> createArtist(Iterable<dynamic> maps) {
   final r = <Artist>[];
 
   for (var map in maps) {
@@ -20,4 +31,4 @@ List<Artist> createArtists(Iterable<dynamic> maps) {
   }
 
   return r;
-}
+} */
