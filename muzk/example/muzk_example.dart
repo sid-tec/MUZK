@@ -1,21 +1,29 @@
 import 'package:muzk/muzk.dart';
-import 'package:muzk/src/model/value_tree_classes.dart';
 
 void main() async {
-/*   final artists = await Repo.load(what: What.artist) as Iterable<Artist>;
+  final artists = await Repo.load(what: What.artist) as Iterable<Artist>;
 
   for (var artist in artists) {
     print(artist.name);
-  } */
+  }
+
+  print('\n----------------------------------\n');
 
   final albums = await Repo.load(what: What.album) as Iterable<Album>;
   //print(albums);
   for (var album in albums) {
     print(album.title);
-    for (var artist in album.artists) {
-      print(artist.value);
-    }
+    print(album.artists);
   }
+  print('\n----------------------------------\n');
+
+  final tracks = await Repo.load(what: What.track) as Iterable<Track>;
+  //print(tracks);
+  for (var track in tracks) {
+    print(track.title);
+    print(track.artists);
+  }
+  print('\n----------------------------------\n');
 
 /*   final albumList = await Repo.load(what: What.album);
   //print(albumMap);

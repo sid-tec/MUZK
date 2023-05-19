@@ -1,2 +1,2 @@
-export 'repository/repository.dart';
-export 'repository/what.dart';
+export 'repository/lib.dart';
+export 'model/lib.dart';

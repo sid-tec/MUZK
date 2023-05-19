@@ -1,46 +1,52 @@
 {
     "track": [
         {
-            "id_deezer": 721,
-            "artist_id_deezer": 1,
-            "album_id_deezer": 21,
-            "nome": "A"
+            "id": 721,
+            "artists": [1],
+            "id_album": 21,
+            "title": "A"
         },
         {
-            "id_deezer": 821,
-            "artist_id_deezer": 1,
-            "album_id_deezer": 21,
-            "nome": "B"
+            "id": 821,
+            "artists": [1],
+            "id_album": 21,
+            "title": "B"
         },
         {
-            "id_deezer": 921,
-            "artist_id_deezer": 1,
-            "album_id_deezer": 21,
-            "nome": "C"
+            "id": 921,
+            "artists": [1],
+            "id_album": 21,
+            "title": "C"
         },
         {
-            "id_deezer": 7211,
-            "artist_id_deezer": 11,
-            "album_id_deezer": 211,
-            "nome": "D"
+            "id": 7211,
+            "artists": [11],
+            "id_album": 211,
+            "title": "D"
         },
         {
-            "id_deezer": 8211,
-            "artist_id_deezer": 11,
-            "album_id_deezer": 211,
-            "nome": "E"
+            "id": 8211,
+            "artists": [11],
+            "id_album": 211,
+            "title": "E"
         },
         {
-            "id_deezer": 72111,
-            "artist_id_deezer": 111,
-            "album_id_deezer": 2111,
-            "nome": "F"
+            "id": 72111,
+            "artists": [111],
+            "id_album": 2111,
+            "title": "F"
         },
         {
-            "id_deezer": 82111,
-            "artist_id_deezer": 111,
-            "album_id_deezer": 3111,
-            "nome": "G"
+            "id": 82111,
+            "artists": [111],
+            "id_album": 3111,
+            "title": "G"
+        },
+        {
+            "id": 713111,
+            "artists": [1, 111],
+            "id_album": 13111,
+            "title": "Z"
         }
     ]
 }   

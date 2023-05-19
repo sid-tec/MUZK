@@ -1,31 +1,14 @@
-/* export 'validator_classes.dart'
+export 'validator_classes.dart'
     show
-        ValidatorUuid,
-        ValidatorFunction,
-        ValidatorRegExp,
-        ValidatorNotEmpty,
-        ValidatorSingleLine,
-        ValidatorMinLength,
-        ValidatorMaxLength,
-        ValidatorDateFormat,
-        ValidatorPastDateTime,
-        ValidatorFutureDateTime,
-        ValidatorPositive,
-        ValidatorNegative,
-        ValidatorMaxValue,
-        ValidatorMinValue;
+        ValidatorIdDeezer,
+        ValidatorYear,
+        ValidatorTitle,
+        ValidatorName,
+        ValidatorArtists;
 
-export 'value_leaf_classes.dart'
-    show
-        UniqueId,
-        BoolVo,
-        Name,
-        Date,
-        DurationSeconds,
-        DeezerId,
-        LocalFile,
-        UrlAddress,
-        Upc;
+export 'value_leaf_classes.dart' show IdDeezer, Year, ArtistName, Title;
 
-export 'value_tree_classes.dart' show Address, Person;
- */
+export 'artist_tree.dart' show Artist;
+export 'artists_tree.dart' show Artists;
+export 'album_tree.dart' show Album;
+export 'track_tree.dart' show Track;

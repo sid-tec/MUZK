@@ -1,9 +1,11 @@
 import 'dart:io';
-import 'package:muzk/src/model/value_tree_classes.dart';
 import 'package:path/path.dart' as p;
 import 'package:sid_d_d/sid_d_d.dart';
 import 'dart:convert';
-
+//
+import '../model/album_tree.dart';
+import '../model/artist_tree.dart';
+import '../model/track_tree.dart';
 import 'what.dart';
 
 class Repo {
@@ -20,7 +22,7 @@ class Repo {
       case What.album:
         return Album.createMany(albumList: list);
       case What.track:
-        return <ValueTree>[];
+        return Track.createMany(trackList: list);
       case What.trackFile:
         return <ValueTree>[];
     }
