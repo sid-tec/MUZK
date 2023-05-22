@@ -41,7 +41,7 @@ void main() async {
   var url = 'https://api.deezer.com/artist/11/image';
   var path = 'D:\\DEVS\\muzk\\muzk\\temp\\beatles.jpg';
 
-  print(download(url: url, path: path));
+  print(await picture(what: What.album, id: 12047952, size: Size.big));
 
 /*   final albumList = await Repo.load(what: What.album);
   //print(albumMap);

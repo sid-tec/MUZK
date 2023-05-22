@@ -1,1 +1,1 @@
-export 'deezer.dart' show deezerAPI;
+export 'deezer.dart' show deezerAPI, picture, Size;

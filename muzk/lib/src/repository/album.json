@@ -29,6 +29,12 @@
             "artists": [111, 1],
             "year": 1977,
             "title": "Circus"
+        },
+        {
+            "id": 12047952,
+            "artists": [1],
+            "year": 1970,
+            "title": "Abbey Road (Remastered)"
         }
     ]
 }   
