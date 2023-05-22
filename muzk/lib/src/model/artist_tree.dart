@@ -1,8 +1,8 @@
 import 'package:sid_d_d/sid_d_d.dart';
 //
-import 'value_leaf_classes.dart';
+import 'interfaces.dart';
 
-class Artist extends ValueTree {
+class Artist extends ValueTree implements IArtist {
   //
   // ===========================
   Artist._({
@@ -47,6 +47,9 @@ class Artist extends ValueTree {
     return r;
   }
 
+  @override
   String get id => value.first.value;
+
+  @override
   String get name => value.last.value;
 }

@@ -1,9 +1,9 @@
 import 'package:sid_d_d/sid_d_d.dart';
 //
-import 'value_leaf_classes.dart';
+import 'interfaces.dart';
 import 'artists_tree.dart';
 
-class Track extends ValueTree {
+class Track extends ValueTree implements ITrack {
   //
   // ===========================
   Track._({
@@ -68,12 +68,16 @@ class Track extends ValueTree {
     return r;
   }
 
+  @override
   int get id => value.first.value;
+  @override
   Iterable<int> get artists {
     var v = value.elementAt(1) as Artists;
     return v.artists;
   }
 
+  @override
   int get album => value.elementAt(2).value;
+  @override
   String get title => value.last.value;
 }

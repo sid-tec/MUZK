@@ -1,8 +1,8 @@
+import 'package:muzk/src/model/interfaces.dart';
 import 'package:sid_d_d/sid_d_d.dart';
-//
-import 'value_leaf_classes.dart';
 
-class Artists extends ValueTree {
+//
+class Artists extends ValueTree implements IArtists {
   //
   // ===========================
   Artists._({
@@ -24,6 +24,7 @@ class Artists extends ValueTree {
     return Artists._(values: r, what: 'artists');
   }
 
+  @override
   Iterable<int> get artists {
     final r = <int>[];
     for (var art in super.value) {
