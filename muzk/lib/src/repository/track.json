@@ -4,48 +4,56 @@
             "id": 721,
             "artists": [1],
             "id_album": 21,
+            "duration": 65,
             "title": "A"
         },
         {
             "id": 821,
             "artists": [1],
             "id_album": 21,
+            "duration": 65,
             "title": "B"
         },
         {
             "id": 921,
             "artists": [1],
             "id_album": 21,
+            "duration": 65,
             "title": "C"
         },
         {
             "id": 7211,
             "artists": [11],
             "id_album": 211,
+            "duration": 65,
             "title": "D"
         },
         {
             "id": 8211,
             "artists": [11],
             "id_album": 211,
+            "duration": 65,
             "title": "E"
         },
         {
             "id": 72111,
             "artists": [111],
             "id_album": 2111,
+            "duration": 65,
             "title": "F"
         },
         {
             "id": 82111,
             "artists": [111],
             "id_album": 3111,
+            "duration": 65,
             "title": "G"
         },
         {
             "id": 713111,
             "artists": [1, 111],
             "id_album": 13111,
+            "duration": 65,
             "title": "Z"
         }
     ]

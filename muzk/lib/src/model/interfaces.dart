@@ -18,6 +18,7 @@ abstract class ITrack {
   int get id;
   Iterable<int> get artists;
   int get album;
+  int get duration;
   String get title;
 }
 

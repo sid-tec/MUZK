@@ -17,6 +17,7 @@ class Track extends ValueTree implements ITrack {
     required int id,
     required Iterable<int> artists,
     required int idAlbum,
+    required int seconds,
     required String title,
   }) =>
       Track._(
@@ -32,6 +33,10 @@ class Track extends ValueTree implements ITrack {
           IdDeezer(
             what: 'id_album',
             value: idAlbum,
+          ),
+          Seconds(
+            value: seconds,
+            what: 'duration',
           ),
           Title(
             what: 'title',
@@ -51,6 +56,7 @@ class Track extends ValueTree implements ITrack {
       if (map.containsKey('id') &&
           map.containsKey('title') &&
           map.containsKey('artists') &&
+          map.containsKey('duration') &&
           map.containsKey('id_album')) {
         final artists = <int>[];
         for (var i in map['artists']) {
@@ -61,6 +67,7 @@ class Track extends ValueTree implements ITrack {
           id: map['id'],
           artists: artists,
           idAlbum: map['id_album'],
+          seconds: map['duration'],
           title: map['title'],
         ));
       }
@@ -78,6 +85,8 @@ class Track extends ValueTree implements ITrack {
 
   @override
   int get album => value.elementAt(2).value;
+  @override
+  int get duration => value.elementAt(3).value;
   @override
   String get title => value.last.value;
 }

@@ -30,7 +30,7 @@ class TrackFile extends ValueTree {
           ),
           LocalPath(
             what: 'path',
-            value: file,
+            value: path,
           ),
           LocalFile(
             what: 'file',

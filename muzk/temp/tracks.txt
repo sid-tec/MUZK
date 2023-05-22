@@ -1,0 +1,31 @@
+{
+    "666" : {
+        'track': Track,
+        'files': {FilePath},
+        'playlists': {Id},
+    }
+}
+
+{
+
+"13177082": {
+    "track": {"id":"13177082","title":"I Ran (So Far Away)","duration":"308","albumId":"1208736","artistId":"2747"},
+    "files": {
+        {"filePath":"E:\\__DEEZ\\128 Deemix\\00OK POP - 198 de 199\\A Flock of Seagulls - I Ran (So Far Away) [A Flock Of Seagulls] 13177082 - 128kbps.mp3"},
+        {"filePath":"E:\\__DEEZ\\128 Deemix\\00OK POP - 198 de 199\\B Flock of Seagulls - I Ran (So Far Away) [A Flock Of Seagulls] 13177082 - 128kbps.mp3"},
+        {"filePath":"E:\\__DEEZ\\128 Deemix\\00OK POP - 198 de 199\\A Flock of Seagulls - I Ran (So Far Away) [A Flock Of Seagulls] 13177082 - 320kbps.mp3"}
+    }
+    "playlists": {"1", "2", "3"}
+
+},
+"2": {
+    "track": {"id":"2","title":"I Ran","duration":"7","albumId":"33","artistId":"27"},
+    "files": {
+        {"filePath":"E:\\__DEEZ\\128 Deemix\\00OK POP - 198 de 199\\A Flock of Seagulls - I Ran [A Flock Of Seagulls] 2 - 128kbps.mp3"},
+        {"filePath":"E:\\__DEEZ\\128 Deemix\\00OK POP - 198 de 199\\B Flock of Seagulls - I Ran [A Flock Of Seagulls] 2 - 128kbps.mp3"},
+        {"filePath":"E:\\__DEEZ\\128 Deemix\\00OK POP - 198 de 199\\A Flock of Seagulls - I Ran [A Flock Of Seagulls] 2 - 320kbps.mp3"}
+    }
+    "playlists": {"1", "2", "3"}
+
+}
+}

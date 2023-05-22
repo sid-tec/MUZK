@@ -1,0 +1,60 @@
+{
+    "trackFile": [
+        {
+            "uid": "721",
+            "id_track": 721,
+            "file": "A.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "821",
+            "id_track": 821,
+            "file": "B.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "921",
+            "id_track": 921,
+            "file": "C.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "7211",
+            "id_track": 7211,
+            "file": "D.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "8211",
+            "id_track": 8211,
+            "file": "E.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "72111",
+            "id_track": 72111,
+            "file": "F.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "82111",
+            "id_track": 82111,
+            "file": "G.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        },
+        {
+            "uid": "713111",
+            "id_track": 713111,
+            "file": "Z.mp3",
+            "path": "D:\\Deezer\\",
+            "hifi": true
+        }
+    ]
+}   

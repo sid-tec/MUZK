@@ -10,6 +10,9 @@ enum What {
   ),
   trackFile(
     what: 'trackFile',
+  ),
+  playlist(
+    what: 'playlist',
   );
 
   const What({

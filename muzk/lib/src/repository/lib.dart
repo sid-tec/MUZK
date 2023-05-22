@@ -1,2 +1,1 @@
-export 'repository.dart';
-export 'what.dart';
+export 'repository.dart' show Repo;

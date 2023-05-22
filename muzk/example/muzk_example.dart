@@ -1,4 +1,5 @@
 import 'package:muzk/muzk.dart';
+import 'package:muzk/src/deezer/deezer.dart';
 
 void main() async {
   final artists = await Repo.load(what: What.artist) as Iterable<Artist>;
@@ -22,8 +23,25 @@ void main() async {
   for (var track in tracks) {
     print(track.title);
     print(track.artists);
+    print('${track.duration} seconds');
   }
   print('\n----------------------------------\n');
+  final tFiles = await Repo.load(what: What.trackFile) as Iterable<TrackFile>;
+  //print(tracks);
+  for (var track in tFiles) {
+    print('${track.path}\\${track.file}');
+  }
+  print('\n----------------------------------\n');
+
+  final beatles = await deezerAPI(what: What.artist, id: 11);
+  print(beatles);
+
+  print('\n----------------------------------\n');
+
+  var url = 'https://api.deezer.com/artist/11/image';
+  var path = 'D:\\DEVS\\muzk\\muzk\\temp\\beatles.jpg';
+
+  print(download(url: url, path: path));
 
 /*   final albumList = await Repo.load(what: What.album);
   //print(albumMap);

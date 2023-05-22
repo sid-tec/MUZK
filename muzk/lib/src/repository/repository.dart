@@ -1,12 +1,13 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:path/path.dart' as p;
 import 'package:sid_d_d/sid_d_d.dart';
-import 'dart:convert';
 //
-import '../model/album_tree.dart';
+import '../model/what.dart';
 import '../model/artist_tree.dart';
+import '../model/album_tree.dart';
 import '../model/track_tree.dart';
-import 'what.dart';
+import '../model/track_file_tree.dart';
 
 class Repo {
   static String path(What what) => p.join(
@@ -24,7 +25,9 @@ class Repo {
       case What.track:
         return Track.createMany(trackList: list);
       case What.trackFile:
-        return <ValueTree>[];
+        return TrackFile.createMany(trackFileList: list);
+      case What.playlist:
+        return [];
     }
   }
 
