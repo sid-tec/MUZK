@@ -1,10 +1,30 @@
 import 'package:muzk/muzk.dart';
-import 'package:muzk/src/model/user_tree.dart';
 
 void main() async {
-  print('ARTIST');
-  final artists = await Repo.load(what: What.artist) as Iterable<IArtist>;
-  for (var artist in artists) {
+  //
+  final muzk = MuzkRepo();
+  await muzk.load();
+
+  for (var play in muzk.allPlaylists) {
+    print(play.title);
+    print('---');
+    for (var track in muzk.tracks(ids: play.tracks)) {
+      print(track.title);
+    }
+    print('\n');
+  }
+  print('\n----------------------------------\n');
+  for (var track in muzk.allTracks) {
+    print(track.title);
+    print('---');
+    for (var art in muzk.artists(ids: track.artists)) {
+      print(art.name);
+    }
+    print('\n');
+  }
+
+/*   print('ARTIST');
+  for (var artist in muzk.artists) {
     print(artist.id);
     print(artist.name);
     print('--');
@@ -12,8 +32,7 @@ void main() async {
   print('\n----------------------------------\n');
 
   print('USER');
-  final users = await Repo.load(what: What.user) as Iterable<IUser>;
-  for (var user in users) {
+  for (var user in muzk.users) {
     print(user.id);
     print(user.name);
     print(user.playlists);
@@ -22,9 +41,7 @@ void main() async {
   print('\n----------------------------------\n');
 
   print('ALBUM');
-  final albums = await Repo.load(what: What.album) as Iterable<IAlbum>;
-  //print(albums);
-  for (var album in albums) {
+  for (var album in muzk.albums) {
     print(album.id);
     print(album.title);
     print(album.year);
@@ -34,9 +51,7 @@ void main() async {
   print('\n----------------------------------\n');
 
   print('TRACK');
-  final tracks = await Repo.load(what: What.track) as Iterable<ITrack>;
-  //print(tracks);
-  for (var track in tracks) {
+  for (var track in muzk.tracks) {
     print(track.id);
     print(track.title);
     print(track.artists);
@@ -47,10 +62,7 @@ void main() async {
   print('\n----------------------------------\n');
 
   print('TRACKFILE');
-  final trackFiles =
-      await Repo.load(what: What.trackFile) as Iterable<ITrackFile>;
-  //print(trackFiles);
-  for (var trackFile in trackFiles) {
+  for (var trackFile in muzk.trackFiles) {
     print(trackFile.uid);
     print('${trackFile.path}\\${trackFile.file}');
     print(trackFile.track);
@@ -60,15 +72,14 @@ void main() async {
   print('\n----------------------------------\n');
 
   print('PLAYLIST');
-  final playlists = await Repo.load(what: What.playlist) as Iterable<IPlaylist>;
-  //print(playlists);
-  for (var playlist in playlists) {
+  for (var playlist in muzk.playlists) {
     print(playlist.id);
     print(playlist.title);
     print(playlist.tracks);
     print('--');
   }
-  print('\n----------------------------------\n');
+  print('\n----------------------------------\n'); */
+
 /* 
   print('DEEZER');
   final beatles = await deezerAPI(what: What.artist, id: 11);

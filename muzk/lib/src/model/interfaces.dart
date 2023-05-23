@@ -41,3 +41,22 @@ abstract class IPlaylist {
   Iterable<int> get tracks;
   String get title;
 }
+
+abstract class IMuzkRepo {
+  Iterable<IAlbum> get allAlbums;
+  Iterable<IArtist> get allArtists;
+  Iterable<IPlaylist> get allPlaylists;
+  Iterable<ITrackFile> get allTrackFiles;
+  Iterable<ITrack> get allTracks;
+  Iterable<IUser> get allUsers;
+  //
+  IAlbum album({required int id});
+  IArtist artist({required int id});
+  IPlaylist playlist({required int id});
+  ITrackFile trackFile({required String uid});
+  ITrack track({required int id});
+  IUser user({required int id});
+  //
+  Iterable<IArtist> artists({required Iterable<int> ids});
+  Iterable<ITrack> tracks({required Iterable<int> ids});
+}
