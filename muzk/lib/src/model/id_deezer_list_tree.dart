@@ -1,31 +1,33 @@
-import 'package:muzk/src/model/interfaces.dart';
 import 'package:sid_d_d/sid_d_d.dart';
+//
+import 'interfaces.dart';
 
 //
-class Artists extends ValueTree implements IArtists {
+class IdDeezerList extends ValueTree implements IIdDeezerList {
   //
   // ===========================
-  Artists._({
+  IdDeezerList._({
     required super.values,
     required super.what,
   });
   //
   // ===========================
-  factory Artists.create({
-    required Iterable<int> artists,
+  factory IdDeezerList.create({
+    required Iterable<int> ids,
+    required String what,
   }) {
     final r = <IdDeezer>[];
-    for (var id in artists) {
+    for (var id in ids) {
       r.add(IdDeezer(
-        what: 'id_artist',
+        what: 'id',
         value: id,
       ));
     }
-    return Artists._(values: r, what: 'artists');
+    return IdDeezerList._(values: r, what: what);
   }
 
   @override
-  Iterable<int> get artists {
+  Iterable<int> get ids {
     final r = <int>[];
     for (var art in super.value) {
       r.add(art.value);

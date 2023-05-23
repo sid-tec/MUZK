@@ -11,6 +11,9 @@ enum What {
   trackFile(
     what: 'trackFile',
   ),
+  user(
+    what: 'user',
+  ),
   playlist(
     what: 'playlist',
   );

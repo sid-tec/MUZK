@@ -1,0 +1,14 @@
+{
+    "user": [
+        {
+            "id": 666,
+            "playlists": [6661],
+            "name": "riommx"
+        },
+        {
+            "id": 777,
+            "playlists": [7771, 7772],
+            "name": "Hermes"
+        }
+    ]
+}   

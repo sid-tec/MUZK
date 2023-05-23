@@ -27,6 +27,10 @@ class Repo {
       case What.trackFile:
         return TrackFile.createMany(trackFileList: list);
       case What.playlist:
+        //return Playlist.createMany(playlistList: list);
+        return [];
+      case What.user:
+        //return User.createMany(userList: list);
         return [];
     }
   }

@@ -1,7 +1,7 @@
 import 'package:sid_d_d/sid_d_d.dart';
 //
 import 'interfaces.dart';
-import 'artists_tree.dart';
+import 'id_deezer_list_tree.dart';
 
 class Track extends ValueTree implements ITrack {
   //
@@ -27,8 +27,9 @@ class Track extends ValueTree implements ITrack {
             what: 'id',
             value: id,
           ),
-          Artists.create(
-            artists: artists,
+          IdDeezerList.create(
+            what: 'artist',
+            ids: artists,
           ),
           IdDeezer(
             what: 'id_album',
@@ -79,8 +80,8 @@ class Track extends ValueTree implements ITrack {
   int get id => value.first.value;
   @override
   Iterable<int> get artists {
-    var v = value.elementAt(1) as Artists;
-    return v.artists;
+    var v = value.elementAt(1) as IdDeezerList;
+    return v.ids;
   }
 
   @override

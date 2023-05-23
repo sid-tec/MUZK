@@ -1,5 +1,4 @@
 import 'package:muzk/muzk.dart';
-import 'package:muzk/src/deezer/deezer.dart';
 
 void main() async {
   final artists = await Repo.load(what: What.artist) as Iterable<Artist>;
@@ -41,7 +40,7 @@ void main() async {
   var url = 'https://api.deezer.com/artist/11/image';
   var path = 'D:\\DEVS\\muzk\\muzk\\temp\\beatles.jpg';
 
-  print(await picture(what: What.album, id: 12047952, size: Size.big));
+  print(await picture(what: What.album, id: 12047952, size: Size.medium));
 
 /*   final albumList = await Repo.load(what: What.album);
   //print(albumMap);

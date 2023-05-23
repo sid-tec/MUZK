@@ -1,10 +1,16 @@
 abstract class IArtist {
-  String get id;
+  int get id;
   String get name;
 }
 
-abstract class IArtists {
-  Iterable<int> get artists;
+abstract class IUser {
+  int get id;
+  Iterable<int> get playlists;
+  String get name;
+}
+
+abstract class IIdDeezerList {
+  Iterable<int> get ids;
 }
 
 abstract class IAlbum {
@@ -23,9 +29,15 @@ abstract class ITrack {
 }
 
 abstract class ITrackFile {
-  String get id;
+  String get uid;
   int get track;
   String get path;
   String get file;
   bool get hifi;
+}
+
+abstract class IPlaylist {
+  int get id;
+  Iterable<int> get tracks;
+  String get title;
 }

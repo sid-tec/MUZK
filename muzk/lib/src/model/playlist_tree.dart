@@ -3,36 +3,31 @@ import 'package:sid_d_d/sid_d_d.dart';
 import 'interfaces.dart';
 import 'id_deezer_list_tree.dart';
 
-class Album extends ValueTree implements IAlbum {
+class Playlist extends ValueTree implements IPlaylist {
   //
   // ===========================
-  Album._({
+  Playlist._({
     required super.values,
     required super.what,
   });
 
   //
   // ===========================
-  factory Album.create({
+  factory Playlist.create({
     required int id,
-    required Iterable<int> artists,
-    required int year,
+    required Iterable<int> tracks,
     required String title,
   }) =>
-      Album._(
-        what: 'album',
+      Playlist._(
+        what: 'playlist',
         values: [
           IdDeezer(
             what: 'id',
             value: id,
           ),
           IdDeezerList.create(
-            what: 'artists',
-            ids: artists,
-          ),
-          Year(
-            value: year,
-            what: 'year',
+            what: 'tracks',
+            ids: tracks,
           ),
           Title(
             what: 'title',
@@ -43,24 +38,23 @@ class Album extends ValueTree implements IAlbum {
 
   //
   // ===========================
-  static Iterable<Album> createMany({
+  static Iterable<Playlist> createMany({
     required Iterable<dynamic> albumList,
   }) {
-    final r = <Album>[];
+    final r = <Playlist>[];
     //print(albumList);
     for (var map in albumList) {
       if (map.containsKey('id') &&
-          map.containsKey('title') &&
-          map.containsKey('artists') &&
-          map.containsKey('year')) {
-        final artists = <int>[];
-        for (var i in map['artists']) {
-          artists.add(i);
+          map.containsKey('tracks') &&
+          map.containsKey('title')) {
+        final tracks = <int>[];
+        for (var i in map['tracks']) {
+          tracks.add(i);
         }
-        r.add(Album.create(
+        //tracks.addAll(as Iterable<int>);
+        r.add(Playlist.create(
           id: map['id'],
-          artists: artists, // map['artists'] as Iterable<int>,
-          year: map['year'],
+          tracks: tracks,
           title: map['title'],
         ));
       }
@@ -71,13 +65,11 @@ class Album extends ValueTree implements IAlbum {
   @override
   int get id => value.first.value;
   @override
-  Iterable<int> get artists {
+  Iterable<int> get tracks {
     var v = value.elementAt(1) as IdDeezerList;
     return v.ids;
   }
 
-  @override
-  int get year => value.elementAt(2).value;
   @override
   String get title => value.last.value;
 }

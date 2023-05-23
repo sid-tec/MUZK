@@ -48,7 +48,7 @@ class Artist extends ValueTree implements IArtist {
   }
 
   @override
-  String get id => value.first.value;
+  int get id => value.first.value;
 
   @override
   String get name => value.last.value;
