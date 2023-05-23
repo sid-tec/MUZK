@@ -1,7 +1,8 @@
+import 'package:muzk/muzk.dart';
 import 'package:sid_d_d/sid_d_d.dart';
 
 //
-class TrackFile extends ValueTree {
+class TrackFile extends ValueTree implements ITrackFile {
   //
   // ===========================
   TrackFile._({
@@ -68,9 +69,14 @@ class TrackFile extends ValueTree {
     return r;
   }
 
-  String get id => value.first.value;
+  @override
+  String get uid => value.first.value;
+  @override
   int get track => value.elementAt(1).value;
+  @override
   String get path => value.elementAt(2).value;
+  @override
   String get file => value.elementAt(3).value;
+  @override
   bool get hifi => value.last.value;
 }

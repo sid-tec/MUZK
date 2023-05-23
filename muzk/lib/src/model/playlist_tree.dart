@@ -39,11 +39,11 @@ class Playlist extends ValueTree implements IPlaylist {
   //
   // ===========================
   static Iterable<Playlist> createMany({
-    required Iterable<dynamic> albumList,
+    required Iterable<dynamic> playlistList,
   }) {
     final r = <Playlist>[];
     //print(albumList);
-    for (var map in albumList) {
+    for (var map in playlistList) {
       if (map.containsKey('id') &&
           map.containsKey('tracks') &&
           map.containsKey('title')) {

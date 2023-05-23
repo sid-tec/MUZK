@@ -39,11 +39,10 @@ class User extends ValueTree implements IUser {
   //
   // ===========================
   static Iterable<User> createMany({
-    required Iterable<dynamic> albumList,
+    required Iterable<dynamic> userList,
   }) {
     final r = <User>[];
-    //print(albumList);
-    for (var map in albumList) {
+    for (var map in userList) {
       if (map.containsKey('id') &&
           map.containsKey('playlists') &&
           map.containsKey('name')) {

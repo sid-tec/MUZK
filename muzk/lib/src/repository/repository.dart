@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:path/path.dart' as p;
 import 'package:sid_d_d/sid_d_d.dart';
 //
+import '../model/playlist_tree.dart';
+import '../model/user_tree.dart';
 import '../model/what.dart';
 import '../model/artist_tree.dart';
 import '../model/album_tree.dart';
@@ -27,11 +29,9 @@ class Repo {
       case What.trackFile:
         return TrackFile.createMany(trackFileList: list);
       case What.playlist:
-        //return Playlist.createMany(playlistList: list);
-        return [];
+        return Playlist.createMany(playlistList: list);
       case What.user:
-        //return User.createMany(userList: list);
-        return [];
+        return User.createMany(userList: list);
     }
   }
 
