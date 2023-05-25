@@ -1,10 +1,13 @@
+import 'package:sid_d_d/sid_d_d.dart';
+
+import '../../muzk.dart';
 import '../model/interfaces.dart';
 import '../model/what.dart';
 import 'repository.dart';
 
 class MuzkRepo implements IMuzkRepo {
   late final Iterable<IAlbum> _albums;
-  late final Map<int, int> _albumsIds = {};
+  late final Map<int, int> _albumsIds;
   late final Iterable<IArtist> _artists;
   late final Map<int, int> _artistsIds = {};
   late final Iterable<IPlaylist> _playlists;
@@ -53,55 +56,45 @@ class MuzkRepo implements IMuzkRepo {
   @override
   IArtist artist({required int id}) => _artists.elementAt(_artistsIds[id]!);
 
+  Iterable<IArtist> artists({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  }) =>
+      getValueTree(
+        what: What.artist,
+        ids: ids,
+        page: page,
+        perPage: perPage,
+      ).map((e) => e as IArtist);
+
+  Iterable<IAlbum> albums({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  }) =>
+      getValueTree(
+        what: What.album,
+        ids: ids,
+        page: page,
+        perPage: perPage,
+      ).map((e) => e as IAlbum);
+
   @override
-  Iterable<IArtist> artists({required Iterable<int> ids}) {
-    final list = <IArtist>[];
-    for (var id in ids) {
-      list.add(_artists.elementAt(_artistsIds[id]!));
+  Iterable<ValueTree> getValueTree({
+    required What what,
+    Iterable<int> ids = const <int>[],
+    Iterable<String> uids = const <String>[],
+    int page = 1,
+    int perPage = 0,
+  }) {
+    switch (what) {
+      case What.artist:
+        return _artists.map((e) => e as ValueTree);
+      case What.album:
+        return _albums.map((e) => e as ValueTree);
+      default:
+        return <ValueTree>[];
     }
-    return list;
   }
-
-  @override
-  IAlbum album({required int id}) => _albums.elementAt(_albumsIds[id]!);
-
-  @override
-  IPlaylist playlist({required int id}) =>
-      _playlists.elementAt(_playlistsIds[id]!);
-
-  @override
-  ITrackFile trackFile({required String uid}) =>
-      _trackFiles.elementAt(_trackfilesIds[uid]!);
-
-  @override
-  ITrack track({required int id}) => _tracks.elementAt(_tracksIds[id]!);
-
-  @override
-  Iterable<ITrack> tracks({required Iterable<int> ids}) {
-    final list = <ITrack>[];
-    for (var id in ids) {
-      list.add(_tracks.elementAt(_tracksIds[id]!));
-    }
-    return list;
-  }
-
-  @override
-  IUser user({required int id}) => _users.elementAt(_usersIds[id]!);
-
-  @override
-  Iterable<IAlbum> get allAlbums => _albums;
-
-  @override
-  Iterable<IArtist> get allArtists => _artists;
-
-  @override
-  Iterable<IPlaylist> get allPlaylists => _playlists;
-
-  @override
-  Iterable<ITrackFile> get allTrackFiles => _trackFiles;
-  @override
-  Iterable<ITrack> get allTracks => _tracks;
-
-  @override
-  Iterable<IUser> get allUsers => _users;
 }

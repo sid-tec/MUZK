@@ -1,3 +1,5 @@
+import 'package:muzk/muzk.dart';
+
 abstract class IArtist {
   int get id;
   String get name;
@@ -43,20 +45,39 @@ abstract class IPlaylist {
 }
 
 abstract class IMuzkRepo {
-  Iterable<IAlbum> get allAlbums;
-  Iterable<IArtist> get allArtists;
-  Iterable<IPlaylist> get allPlaylists;
-  Iterable<ITrackFile> get allTrackFiles;
-  Iterable<ITrack> get allTracks;
-  Iterable<IUser> get allUsers;
-  //
-  IAlbum album({required int id});
-  IArtist artist({required int id});
-  IPlaylist playlist({required int id});
-  ITrackFile trackFile({required String uid});
-  ITrack track({required int id});
-  IUser user({required int id});
-  //
-  Iterable<IArtist> artists({required Iterable<int> ids});
-  Iterable<ITrack> tracks({required Iterable<int> ids});
+  Iterable<IUser> users({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  });
+
+  Iterable<IPlaylist> playlists({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  });
+
+  Iterable<IArtist> artists({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  });
+
+  Iterable<IAlbum> albums({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  });
+
+  Iterable<ITrack> tracks({
+    Iterable<int> ids = const <int>[],
+    int page = 1,
+    int perPage = 0,
+  });
+
+  Iterable<ITrackFile> trackFiles({
+    Iterable<String> uids = const <String>[],
+    int page = 1,
+    int perPage = 0,
+  });
 }

@@ -8,19 +8,31 @@ void main() async {
   for (var play in muzk.allPlaylists) {
     print(play.title);
     print('---');
-    for (var track in muzk.tracks(ids: play.tracks)) {
+    for (var track in muzk.someTracks(ids: play.tracks)) {
       print(track.title);
     }
     print('\n');
   }
-  print('\n----------------------------------\n');
+/*   print('\n----------------------------------\n');
   for (var track in muzk.allTracks) {
     print(track.title);
     print('---');
-    for (var art in muzk.artists(ids: track.artists)) {
+    for (var art in muzk.someArtists(ids: track.artists)) {
       print(art.name);
     }
     print('\n');
+  }
+ */
+  print('\n----------------------------------\n');
+  final artists = muzk.artists();
+
+  for (var element in artists) {
+    print(element.name);
+  }
+  final albums = muzk.albums();
+
+  for (var element in albums) {
+    print(element.title);
   }
 
 /*   print('ARTIST');
