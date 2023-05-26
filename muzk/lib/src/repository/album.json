@@ -2,39 +2,52 @@
     "album": [
         {
             "id": 21,
-            "artists": [1],
+            "artists": [
+                1
+            ],
             "year": 1968,
             "title": "The White Album"
         },
         {
             "id": 211,
-            "artists": [11],
+            "artists": [
+                11
+            ],
             "year": 1979,
             "title": "Sandina"
         },
         {
             "id": 2111,
-            "artists": [111],
+            "artists": [
+                111
+            ],
             "year": 1969,
             "title": "Let It Bleed"
         },
         {
             "id": 3111,
-            "artists": [111],
+            "artists": [
+                111
+            ],
             "year": 1974,
             "title": "Satisfaction"
         },
         {
             "id": 13111,
-            "artists": [111, 1],
+            "artists": [
+                111,
+                1
+            ],
             "year": 1977,
             "title": "Circus"
         },
         {
             "id": 12047952,
-            "artists": [1],
+            "artists": [
+                1
+            ],
             "year": 1970,
             "title": "Abbey Road (Remastered)"
         }
     ]
-}   
+}

@@ -1,5 +1,3 @@
-import 'package:muzk/muzk.dart';
-
 abstract class IArtist {
   int get id;
   String get name;

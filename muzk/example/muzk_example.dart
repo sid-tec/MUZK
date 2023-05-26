@@ -5,14 +5,14 @@ void main() async {
   final muzk = MuzkRepo();
   await muzk.load();
 
-  for (var play in muzk.allPlaylists) {
+/*   for (var play in muzk.allPlaylists) {
     print(play.title);
     print('---');
     for (var track in muzk.someTracks(ids: play.tracks)) {
       print(track.title);
     }
     print('\n');
-  }
+  } */
 /*   print('\n----------------------------------\n');
   for (var track in muzk.allTracks) {
     print(track.title);
@@ -24,16 +24,18 @@ void main() async {
   }
  */
   print('\n----------------------------------\n');
-  final artists = muzk.artists();
+  final artists = muzk.artists(ids: [111, 1]);
 
   for (var element in artists) {
     print(element.name);
   }
-  final albums = muzk.albums();
+  final albums = muzk.albums(ids: [2111, 77, 3111]);
 
   for (var element in albums) {
     print(element.title);
   }
+
+  //muzk.save();
 
 /*   print('ARTIST');
   for (var artist in muzk.artists) {
