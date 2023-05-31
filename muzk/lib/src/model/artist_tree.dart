@@ -30,6 +30,11 @@ class Artist extends ValueTree implements IArtist {
         ],
       );
 
+  factory Artist.fromMap(Map<String, dynamic> map) => Artist.create(
+        id: map['id'],
+        name: map['name'],
+      );
+
   //
   // ===========================
   static Iterable<Artist> createMany({
